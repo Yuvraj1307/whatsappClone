@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/chat.css" />
+    <script
+    src="https://kit.fontawesome.com/64d58efce2.js"
+    crossorigin="anonymous"
+  ></script>
+
+
+  <!-- /* <<<<<<<<<<--------for burger menue---------- */ -->
+    <script
+    src="https://kit.fontawesome.com/127eb51a96.js"
+    crossorigin="anonymous"
+  ></script>  </head>
+  <body>
+    <div id="cont">
+      <div id="nav">
+        <div id="burger">
+
+          <input type="checkbox" id="check" onclick="toggleUserList()" />
+          <!-- <label  for="check"  class="checkbtn"> -->
+            <label for="check" class="checkbtn"> <i class="fas fa-bars"></i></label>
+          
+          </div>
+      </div>
+      <div id="body">
+        <div id="left">
+            <div><input id="ser"   type="text" placeholder="search people"><i class="fas fa-search"></i></div>
+            <div id="members">
+                 
+            </div>
+        </div>
+        <div id="right">right</div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="./JSfiles/chat.js"></script>
+
+<script>
+  const userList = document.querySelector('#left');
+window.addEventListener("resize",()=>{
+
+  if(window.innerWidth>858){
+    userList.style.display="block"
+    userList.style.left="1%"
+  }
+})
+
+    function toggleUserList(e){
+      console.log(this.check.checked)
+       console.log(window.innerWidth)
+      if(this.check.checked && window.innerWidth<=858){
+        userList.style.display="block"
+        userList.style.left="1%"
+       }else if(!this.check.checked && window.innerWidth<=858) {
+        
+        
+        userList.style.display="none"
+        userList.style.left="-100%"
+        
+      }
+       
+        
+      }
+     
+</script>

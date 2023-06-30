@@ -1,0 +1,144 @@
+body{
+    background: black;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+#cont {
+  width: 100%;
+  height: 96vh;
+  border: 1px solid red;
+  
+}
+#nav {
+  width: 100%;
+  height: 10%;
+  background-color: blue;
+  /* position: fixed; */
+}
+#body {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  /* margin-top: 4.5%; */
+}
+
+#left {
+  
+    /* float: right; */
+    /* margin-right: 20px; */
+  
+  width: 30%;
+  height: 100%;
+  background-color: yellow;
+  display: block;
+}
+#right {
+  width: 70%;
+  height: 100%;
+  background-color: red;
+}
+
+#left > div:nth-child(1) {
+  width: 100%;
+  height: 10%;
+  background-color: pink;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#left > div:nth-child(1) > input {
+  width: 70%;
+
+  outline: none;
+  border: none;
+  background: #fff;
+  padding: 6px;
+
+  border-radius: 30px;
+  font-size: 20px;
+  padding-left: 40px;
+}
+#left > div:nth-child(1) >i{
+
+    position: absolute;
+    left: 12%;
+    top: 35%;
+    font-size: 1.2em;
+    color: grey;
+}
+
+#members>div{
+    width: 100%;
+    height: 50px;
+    border: 1px solid green;
+    display: flex;
+}
+
+/* #members>div>img{
+    
+} */
+#members>div:hover{
+    background-color: grey;
+}
+
+
+#burger{
+  display: none;
+}
+/* #nav{
+  display: none;
+} */
+#checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#checkbtn>i{
+  display: none;
+}
+#check {
+  display: none;
+}
+
+
+@media (max-width: 858px) {
+ /* #nav{
+  width: 100%;
+ } */
+  #burger{
+    display: block;
+    /* float: right; */
+    margin-left: 7%;
+    padding-top: 2.9vh;
+  }
+  .checkbtn>i{
+    display: block;
+  }
+  #check:checked ~ .checkbtn i::before{
+    display: block;
+  }
+ 
+  #left {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+     
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  #right {
+  width: 100%;
+  }
+
+}
