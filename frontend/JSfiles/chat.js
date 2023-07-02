@@ -1,14 +1,21 @@
+ 
 let members=document.getElementById("members")
 
 async function renderMembers(data){
 let arr
 if(data){
     if(data.length>0){
-
+       
         arr=data.map((el,i)=>{
-            return `
-            <div><img /><h4>${el.Username}</h4></div>
-            `
+            if(!el.avatar){
+               
+                return `
+                <div><img src="./images/userimages/default-image-icon-png-20.jpg" alt=userimage /><h4>${el.Username}</h4></div>
+                `
+            }else{
+                return `
+            <div><img src=${el.avatar} /><h4>${el.Username}</h4></div>
+            `}
         })
         members.innerHTML=arr.join(" ")
     }else{
@@ -25,10 +32,15 @@ if(data){
     let data=await res.json()
     if(res.ok){
         arr=data.users.map((el,i)=>{
-            return`
-            <div><img /><h4>${el.Username}</h4></div>
-            `
-
+            if(!el.avatar){
+ 
+                return `
+                <div><img src="./images/userimages/default-image-icon-png-20.jpg" alt=userimage /><h4>${el.Username}</h4></div>
+                `
+            }else{
+                return `
+            <div><img src=${el.avatar} /><h4>${el.Username}</h4></div>
+            `}
         })
     }
 

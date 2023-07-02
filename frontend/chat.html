@@ -22,8 +22,7 @@
         <div id="burger">
 
           <input type="checkbox" id="check" onclick="toggleUserList()" />
-          <!-- <label  for="check"  class="checkbtn"> -->
-            <label for="check" class="checkbtn"> <i class="fas fa-bars"></i></label>
+             <label for="check" class="checkbtn"> <i class="fas fa-bars"></i></label>
           
           </div>
       </div>
@@ -34,7 +33,12 @@
                  
             </div>
         </div>
-        <div id="right">right</div>
+        <div id="right"> 
+            <div id="chatcont">
+              
+            </div>
+            <div id="chatimp"><div><input type="text" placeholder="write something here..."> <button>send</button></div></div>
+        </div>
       </div>
     </div>
   </body>
@@ -52,11 +56,13 @@ window.addEventListener("resize",()=>{
 })
 
     function toggleUserList(e){
-      console.log(this.check.checked)
-       console.log(window.innerWidth)
+      // console.log(this.check.checked)
+      //  console.log(window.innerWidth)
       if(this.check.checked && window.innerWidth<=858){
         userList.style.display="block"
         userList.style.left="1%"
+        // userList.style.transition="all 0.5s";
+
        }else if(!this.check.checked && window.innerWidth<=858) {
         
         

@@ -1,55 +1,76 @@
 body{
     background: black;
     position: relative;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 
 #cont {
   width: 100%;
   height: 96vh;
-  border: 1px solid red;
-  
+  /* border: 1px solid red; */
+  /* max-height: 96vh; */
+
 }
 #nav {
   width: 100%;
   height: 10%;
-  background-color: blue;
-  /* position: fixed; */
+   
+  /* background: linear-gradient(to bottom right, blue, rgb(89, 192, 236)); */
+  background: linear-gradient(to bottom right, rgb(134, 214, 179), rgb(72, 189, 240));
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
 }
 #body {
   width: 100%;
   height: 90%;
   display: flex;
-  /* margin-top: 4.5%; */
-}
+  /* max-height: 100%; */
+  border-radius: 10px;
+justify-content: space-between;
+
+ }
 
 #left {
   
-    /* float: right; */
-    /* margin-right: 20px; */
+ 
   
   width: 30%;
   height: 100%;
-  background-color: yellow;
+  /* background-color:aliceblue; */
+  /* background-color: rgb(48, 115, 114); */
+  background: linear-gradient(to bottom right, rgb(242, 245, 244), rgb(215, 233, 231));
+  /* background: linear-gradient(to bottom right, rgb(134, 214, 179), rgb(72, 189, 240)); */
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   display: block;
+  max-height: 100%;
+  overflow-y: auto;
+
+overflow-x: hidden;
 }
 #right {
   width: 70%;
   height: 100%;
-  background-color: red;
+   border-radius: 10px;
+
+
 }
 
 #left > div:nth-child(1) {
   width: 100%;
   height: 10%;
-  background-color: pink;
+  /* background-color: ; */
   position: relative;
   width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 #left > div:nth-child(1) > input {
   width: 70%;
@@ -57,7 +78,10 @@ body{
   outline: none;
   border: none;
   background: #fff;
+  /* background: linear-gradient(to bottom right, rgb(134, 214, 179), rgb(72, 189, 240)); */
+
   padding: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   border-radius: 30px;
   font-size: 20px;
@@ -70,29 +94,50 @@ body{
     top: 35%;
     font-size: 1.2em;
     color: grey;
+    /* overflow-y: auto; */
 }
-
+#members{
+ 
+  max-height: 100%;
+  
+}
 #members>div{
-    width: 100%;
-    height: 50px;
-    border: 1px solid green;
+  width: 100%;
+  height: 50px;
+  
     display: flex;
 }
+ 
 
-/* #members>div>img{
-    
-} */
-#members>div:hover{
-    background-color: grey;
+#members>div>img{
+
+  border-radius: 100%;
+  padding: 10px 5px;
+  background-color: white;
+  margin-left: 4%;
+background: transparent;
+  /* border-top-right-radius: 80px;
+  border-top-left-radius: 80px; */
 }
+#members>div>h4{
+   display: block;
+   margin-top: 4%;
+   margin-left: 4%;
+}
+#members>div:hover{
+    /* background-color: rgb(216, 245, 248); */
+    /* background-color: rgb(29, 83, 83); */
+    /* background: linear-gradient(to bottom right, rgb(5, 161, 138), rgb(132, 237, 209)); */
+    background: linear-gradient(to bottom right, rgb(229, 240, 235), rgb(188, 216, 228));
+
+border-radius: 20px;
+ }
 
 
 #burger{
   display: none;
 }
-/* #nav{
-  display: none;
-} */
+ 
 #checkbtn {
   font-size: 30px;
   color: white;
@@ -110,15 +155,61 @@ body{
 }
 
 
-@media (max-width: 858px) {
- /* #nav{
+
+
+#chatcont{
   width: 100%;
- } */
+  height: 90%;
+  background-color: rgb(236, 236, 243);
+  overflow-y: scroll;
+
+}
+
+#chatimp{
+  width: 100%;
+  height: 10%;
+  background-color: white;
+  display: flex;
+   border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#chatimp>div{
+  /* border: none;
+  width: 60%; */
+  margin: auto;
+}
+#chatimp>div>input{
+  /* width: 70%; */
+width: 80vh;
+  outline: none;
+  border: none;
+  background: #fff;
+  padding: 6px;
+
+  border-radius: 30px;
+  font-size: 20px;
+  padding-left: 40px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+}
+
+#chatimp>div>button{
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  /* padding: 50px 80x 500px 80px; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+@media (max-width: 858px) {
+  
   #burger{
     display: block;
-    /* float: right; */
-    margin-left: 7%;
+     margin-left: 7%;
     padding-top: 2.9vh;
+     cursor: pointer;
   }
   .checkbtn>i{
     display: block;
@@ -130,15 +221,74 @@ body{
   #left {
     position: fixed;
     width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-     
+    height: 87vh;
+    /* background: #2c3e50; */
+    background-color: white;
+      
     left: -100%;
     text-align: center;
     transition: all 0.5s;
+    overflow-y: auto;
+    
+    
+    
+  }
+
+  #members>div{
+  border-radius: 10px;
+  
   }
   #right {
   width: 100%;
   }
 
+  #chatimp>div{
+    width: 50%;
+    border-radius: 10px;
+
+  }
+  #chatimp>div>input{
+    width: 50%;
+    font-size: 80%;
+    padding-left: 7%;
+  }
+ 
+
+  #body {
+    overflow-y: auto;
+  }
 }
+
+@media (max-width: 270px) {
+  #chatimp>div{
+    width: 100%;
+  }
+
+  #chatimp>div>input{
+    width: 70%;
+    font-size: 50%;
+    padding-left: 7%;
+  }
+
+  
+#chatimp>div>button{
+  border-radius: 10px;
+  border: none;
+  font-size: 60%;
+  height: 15px;
+}
+}
+
+
+
+
+
+
+
+#chatcont{
+  background-image: url("../images/image_processing20210903-22949-1nen5gd.gif");
+  /* background-image: url(); */
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size:contain;
+ }
