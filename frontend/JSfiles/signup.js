@@ -33,17 +33,14 @@ let res=await fetch(`http://localhost:4500/user/login`,{
                       window.open("chat.html")
                     }
               })
-                console.log(data)
-              }else{
-                console.log(data)
-                Swal.fire({
+               }else{
+                 Swal.fire({
                   icon: 'error',
                   title: 'Oops...',
                   text: data.msg
               })
               }
-// console.log(imp,imp2,obj)
-
+ 
 })
 
 
@@ -66,12 +63,27 @@ let res=await fetch(`http://localhost:4500/user/signup`,{
              body:JSON.stringify(obj)
                })
 
-    if(res.ok){
-      let data=await res.json()
-      console.log(data)
+    let data=await res.json()
+     if(res.ok){
+      if(data.msg=="registration successful"){
+
+        Swal.fire({
+          icon: 'success',
+          title: data.msg,
+          willClose: () => {
+             container.classList.remove("sign-up-mode");
+          }
+        })
+       } else{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: data.msg,
+           
+      })
+      }
     }
-// console.log(imp,imp2,imp3,obj)
-})
+ })
 
 
 
